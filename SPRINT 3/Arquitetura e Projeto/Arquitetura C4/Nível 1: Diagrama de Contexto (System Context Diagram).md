@@ -7,6 +7,5 @@ Propósito: Identificar os principais atores (pessoas e sistemas) que interagem 
 ---
 
 <p align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1G4tPD9zbkxoRZoxghiDA7pd8K-YuZR2l" height="600"  width="800"/>
+  <img src="https://drive.google.com/uc?export=view&id=1sSNmQDY--MlWfiWrqUVAlqvYf1Q6yUpa" height="600"  width="400"/>
 </p>
-
