@@ -5,6 +5,5 @@ O Diagrama de Componentes aprofunda a visão de um único contêiner (selecionad
 ---
 
 <p align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1WEnRpbXeZPxvZvCKo9ZCNk4xWhEmV3oJ" height="600"  width="800"/>
+  <img src="https://drive.google.com/uc?export=view&id=1F0gu4svs-OvhDH_HX5uy74qEZht6Cf1D" height="600"  width="800"/>
 </p>
-
