@@ -4,11 +4,11 @@ O projeto EMODIA se beneficia da metodologia Molic (Modelagem de Interfaces Cola
 O Molic é ideal para o EMODIA, pois ele permite mapear as regras de negócio, os pré-condições (precond), os resultados garantidos (gco) e as mudanças de estado (d: / sc:) que ocorrem no *backend* a partir das ações do usuário (*u:*) no *frontend*.
 
 
---
+--- 
 
 
 <p align="center">
-  <img src="https://drive.google.com/uc?export=view&id=12izS2fRO4oybST0C5qewbfDNeCBBkSz0" height="500"  width="400"/>
+  <img src="https://drive.google.com/uc?export=view&id=1qUH5Lg37UwWANIe_jEXmoeQY-zuY5DCS" height="500"  width="400"/>
 </p>
 
 
