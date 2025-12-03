@@ -6,6 +6,6 @@ Este nível responde: "Como o EMODIA está dividido em partes implantáveis e qu
 ---
 
 <p align="center">
-  <img src="https://drive.google.com/uc?export=view&id=1GykMYcmQocXVSYYQOGG9FPYwdVZ7KUKk" height="600"  width="800"/>
+  <img src="https://drive.google.com/uc?export=view&id=1oUaVOXmNSd-lA5YMtwI42pq5mAfqhhD0" height="600"  width="700"/>
 </p>
 
