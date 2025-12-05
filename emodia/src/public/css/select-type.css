@@ -1,0 +1,100 @@
+/* ==== Fundo e Layout ==== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(135deg, #fde7ff, #e3ddff, #d7ecff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+}
+
+/* Botão voltar */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 14px;
+    color: #444;
+    text-decoration: none;
+}
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+/* Container principal */
+.container {
+    text-align: center;
+    width: 900px;
+}
+
+/* Título */
+.container h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.container p {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.tip {
+    display: inline-block;
+    background: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    margin-bottom: 35px;
+}
+
+/* GRID de opções */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+/* BOX de cada opção */
+.option-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.25s;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+    border-color: #b784ff;
+}
+
+/* Ícones */
+.option-card i {
+    font-size: 38px;
+    color: #8b00ff;
+    margin-bottom: 10px;
+}
+
+/* Títulos */
+.option-card h3 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Descrição */
+.option-card p {
+    font-size: 14px;
+    color: #666;
+}

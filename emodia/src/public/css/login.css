@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(135deg, #f7d5f9, #e7d9ff, #fbe7ff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+}
+
+/* Botão voltar */
+.back-link {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: #3c006b;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.back-icon {
+    font-size: 20px;
+}
+
+/* Container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Card */
+.login-card {
+    width: 420px;
+    background: #fff;
+    padding: 38px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+/* Logo */
+.logo {
+    width: 85px;
+    margin-bottom: 8px;
+}
+
+/* Títulos */
+h1 {
+    font-size: 22px;
+    margin: 6px 0;
+    color: #2d0055;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Erro */
+.error-message {
+    background: #ffd4d4;
+    color: #7a0000;
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* Inputs */
+.input-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+}
+
+input:focus {
+    border-color: #a020f0;
+}
+
+/* Senha + Olho */
+.password-wrapper {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 0.75;
+}
+
+.eye-icon:hover {
+    opacity: 1;
+}
+
+/* Botão entrar */
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background: #000;
+    color: white;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.btn-login:hover {
+    background: #222;
+}
+
+/* Links */
+.forgot-link {
+    display: block;
+    margin-top: 12px;
+    color: #8600e6;
+    font-size: 14px;
+}
+
+.signup-link {
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #8600e6;
+    font-weight: 600;
+}
+
+/* Segurança */
+.security-note {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #666;
+}

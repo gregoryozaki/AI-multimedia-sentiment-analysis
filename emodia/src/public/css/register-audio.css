@@ -1,0 +1,65 @@
+.audio-body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #faedf8, #f0f2ff, #ffeef3);
+}
+
+.audio-header {
+    padding: 24px 40px;
+}
+
+.back-btn {
+    color: #444;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.audio-container {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+.audio-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.audio-subtitle {
+    opacity: 0.7;
+    margin-top: 4px;
+    margin-bottom: 30px;
+}
+
+.audio-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 4px 20px #0001;
+}
+
+.record-btn,
+.stop-btn,
+.audio-btn {
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 600;
+    margin-top: 14px;
+}
+
+.record-btn {
+    background: #7b1fa2;
+    color: #fff;
+}
+
+.stop-btn {
+    background: #e53935;
+    color: #fff;
+}
+
+.audio-btn {
+    background: #000;
+    color: #fff;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login • Emodia</title>
+
+    <!-- Ícones minimalistas -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/css/login.css" />
+</head>
+
+<body>
+
+    <!-- Botão Voltar -->
+    <a href="/" class="back-link">
+        <span class="material-symbols-rounded back-icon">arrow_back</span>
+        Voltar
+    </a>
+
+    <div class="login-container">
+
+        <div class="login-card">
+            <img src="/assets/logo.png" alt="Emodia" class="logo">
+
+            <h1>Bem-vindo de volta</h1>
+            <p class="subtitle">Entre na sua conta Emodia</p>
+
+            <% if (error) { %>
+                <div class="error-message"><%= error %></div>
+            <% } %>
+
+            <form action="/login" method="POST" class="login-form">
+
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input 
+                        type="email" 
+                        name="email"
+                        placeholder="seu@email.com"
+                        required 
+                    />
+                </div>
+
+                <div class="input-group">
+                    <label>Senha</label>
+                    <div class="password-wrapper">
+                        <input 
+                            type="password" 
+                            name="password" 
+                            id="password"
+                            placeholder="Sua senha" 
+                            required 
+                        />
+
+                        <!-- Olho minimalista -->
+                        <span id="togglePassword" class="material-symbols-rounded eye-icon">
+                            visibility
+                        </span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login">Entrar</button>
+
+            </form>
+
+            <a href="/forgot-password" class="forgot-link">Esqueceu a senha?</a>
+
+            <div class="signup-link">
+                Não tem conta? <a href="/signup">Criar conta</a>
+            </div>
+
+            <p class="security-note">Seus dados são armazenados de forma segura</p>
+        </div>
+    </div>
+
+    <script src="/js/login.js"></script>
+</body>
+</html>

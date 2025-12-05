@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta • Emodia</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Ícones para os olhos -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+
+<body>
+
+    <!-- Voltar -->
+    <a href="/" class="back-link">
+        <svg width="22" height="22" stroke-width="2" stroke="#3c006b" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 18l-6-6 6-6"/>
+        </svg>
+        Voltar
+    </a>
+
+    <div class="signup-container">
+        <div class="signup-card">
+
+            <img src="/assets/logo.png" class="logo" alt="Logo Emodia">
+
+            <h1>Crie sua conta</h1>
+            <p class="subtitle">Comece a monitorar suas emoções hoje</p>
+
+            <% if (error) { %>
+                <div class="alert-error"><%= error %></div>
+            <% } %>
+
+            <form id="signup-form" action="/signup" method="POST" autocomplete="off">
+
+                <!-- Nome -->
+                <div class="input-group">
+                    <label>Nome completo *</label>
+                    <input type="text" name="name" required placeholder="Seu nome completo">
+                </div>
+
+                <!-- Data -->
+                <div class="input-group">
+                    <label>Data de nascimento *</label>
+                    <input type="date" name="birthday" id="birthdate" required>
+                    <small class="age-note">Você precisa ter 18 anos ou mais</small>
+                </div>
+
+                <!-- Email -->
+                <div class="input-group">
+                    <label>E-mail *</label>
+                    <input type="email" name="email" required placeholder="seuemail@gmail.com">
+                </div>
+
+                <!-- SENHA (corrigido) -->
+                <div class="input-group">
+                    <label>Senha *</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" required placeholder="Sua senha">
+
+                        <span id="togglePassword" class="material-symbols-rounded eye-icon">
+                            visibility
+                        </span>
+                    </div>
+                </div>
+
+                <!-- REGRAS -->
+                <div class="password-rules">
+                    <p>A senha deve conter:</p>
+                    <ul>
+                        <li id="rule1">Mínimo 8 caracteres</li>
+                        <li id="rule2">Uma letra maiúscula</li>
+                        <li id="rule3">Uma letra minúscula</li>
+                        <li id="rule4">Um número</li>
+                        <li id="rule5">Um caractere especial</li>
+                    </ul>
+                </div>
+
+                <!-- CONFIRMAR SENHA (corrigido) -->
+                <div class="input-group">
+                    <label>Confirmar senha *</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirm" name="confirmPassword" required placeholder="Repita sua senha">
+
+                        <span id="toggleConfirm" class="material-symbols-rounded eye-icon">
+                            visibility
+                        </span>
+                    </div>
+                </div>
+
+                <!-- TERMOS -->
+                <div class="terms-area">
+                    <label class="terms-label">
+                        <input type="checkbox" id="accept-terms" name="terms" required>
+
+                        <span>
+                            Eu li e aceito os
+                            <a href="#" id="open-terms">Termos de Uso e Política de Privacidade (LGPD)</a> *
+                        </span>
+                    </label>
+                </div>
+
+
+                <button type="submit" class="btn-create">Criar Conta</button>
+
+                <p class="login-link">
+                    Já tem uma conta? <a href="/login">Fazer login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL DOS TERMOS -->
+    <div id="modal-terms" class="modal">
+        <div class="modal-content">
+            <h2>Termos de Uso e LGPD</h2>
+            
+            <div class="modal-body">
+                <%- include("./partials/modal-terms.ejs") %>
+            </div>
+
+            <button id="close-terms" class="btn-close">Fechar</button>
+        </div>
+    </div>
+
+    <!-- MODAL IDADE -->
+    <div id="modal-age" class="modal">
+        <div class="modal-content smaller">
+            <h3 class="modal-title-error">❗ Cadastro não permitido</h3>
+            <p>Você precisa ter 18 anos ou mais para usar o Emodia.</p>
+            <p class="modal-desc">Esta exigência é para sua segurança e conformidade com a LGPD.</p>
+            <button id="close-age" class="btn-close">Entendi</button>
+        </div>
+    </div>
+
+    <script src="/js/signup.js"></script>
+
+</body>
+</html>

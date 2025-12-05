@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Emoção • Vídeo</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/register-video.css">
+</head>
+
+<body class="video-body">
+
+    <header class="video-header">
+        <a href="/emotions/select" class="back-btn">← Voltar</a>
+    </header>
+
+    <section class="video-container">
+
+        <h2 class="video-title">Registrar Emoção por Vídeo</h2>
+        <p class="video-subtitle">Use sua câmera para registrar sua emoção visualmente</p>
+
+        <div class="video-card">
+
+            <video id="liveVideo" autoplay playsinline></video>
+
+            <button id="startVideoBtn" class="record-btn">🎥 Iniciar gravação</button>
+            <button id="stopVideoBtn" class="stop-btn" disabled>⏹ Parar gravação</button>
+
+            <video id="videoPlayback" controls style="display:none;"></video>
+
+            <form action="/emotions/register/video" method="POST">
+                <input type="hidden" name="videoData" id="videoData">
+                <button id="sendVideoBtn" type="submit" class="video-btn" disabled>Registrar Emoção</button>
+            </form>
+
+        </div>
+
+    </section>
+
+    <script src="/js/register-video.js"></script>
+</body>
+</html>

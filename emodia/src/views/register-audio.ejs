@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Emoção • Áudio</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/register-audio.css">
+</head>
+
+<body class="audio-body">
+
+    <header class="audio-header">
+        <a href="/emotions/select" class="back-btn">← Voltar</a>
+    </header>
+
+    <section class="audio-container">
+
+        <h2 class="audio-title">Registrar Emoção por Áudio</h2>
+        <p class="audio-subtitle">Grave alguns segundos para expressar o que está sentindo</p>
+
+        <div class="audio-card">
+
+            <button id="startBtn" class="record-btn">🎤 Iniciar gravação</button>
+            <button id="stopBtn" class="stop-btn" disabled>⏹ Parar gravação</button>
+
+            <audio id="audioPlayback" controls style="display:none;"></audio>
+
+            <form action="/emotions/register/audio" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="audioData" id="audioData">
+                <button id="sendBtn" type="submit" class="audio-btn" disabled>Registrar Emoção</button>
+            </form>
+
+        </div>
+
+    </section>
+
+    <script src="/js/register-audio.js"></script>
+</body>
+</html>

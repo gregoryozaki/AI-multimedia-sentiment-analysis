@@ -1,0 +1,182 @@
+/* ===== DASHBOARD ===== */
+
+.dashboard-container {
+    width: 100%;
+    padding: 10px;
+    font-family: "Inter", sans-serif;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.dashboard-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2b2b2b;
+}
+
+.dashboard-date {
+    margin-top: 6px;
+    color: #6b6b6b;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: #000;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.btn-primary:hover {
+    opacity: 0.85;
+}
+
+/* ===== CARDS ===== */
+
+.dashboard-cards-row {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.dashboard-card {
+    flex: 1;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 18px;
+    border: 1px solid #eee5ff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.dashboard-card h3 {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #444;
+}
+
+.dashboard-card-value {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.card-subtitle {
+    font-size: 13px;
+    color: #7a7a7a;
+    margin-top: 6px;
+}
+
+/* ===== SEÇÕES ===== */
+
+.dashboard-section h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.section-subtitle {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #6b6b6b;
+}
+
+.dashboard-chart-box,
+.dashboard-list-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #eee5ff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    min-height: 160px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 30px;
+    color: #7a7a7a;
+}
+
+.empty-state i {
+    font-size: 46px;
+    color: #bdbdbd;
+    margin-bottom: 12px;
+}
+
+.btn-secondary {
+    background: #f4f4f4;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #333;
+}
+#weeklyChart {
+    width: 100% !important;
+    height: 280px !important;
+}
+
+.dashboard-chart-box {
+    position: relative;
+}
+.emotion-item {
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ececec;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.05);
+}
+
+.emotion-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.emotion-type {
+    background: #f3e8ff;
+    padding: 4px 10px;
+    border-radius: 8px;
+    color: #772dff;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.emotion-notes {
+    color: #444;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.emotion-meta {
+    display: flex;
+    gap: 18px;
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.emotion-thumb {
+    width: 90px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+.emotion-date {
+    font-size: 12px;
+    color: #888;
+}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Emodia</title>
+
+    <!-- CSS globais -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Ícones Phosphor -->
+    <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@1.4.2/src/css/icons.css">
+</head>
+
+<body>
+
+    <div class="layout-container">
+
+        <!-- SIDEBAR -->
+        <%- include("components/sidebar") %>
+
+        <!-- CONTEÚDO DO DASHBOARD -->
+        <main class="content-area">
+
+            <div class="dashboard-container">
+
+                <div class="dashboard-header">
+                    <div>
+                        <h1>Bem-vindo de volta! 👋</h1>
+                        <p class="dashboard-date"><%= currentDate %></p>
+                    </div>
+
+                    <a href="/emotions/select" class="btn-primary">Registrar Emoção</a>
+                </div>
+
+                <!-- CARDS SUPERIORES -->
+                <div class="dashboard-cards-row">
+
+                    <div class="dashboard-card">
+                        <h3>Resumo de Hoje</h3>
+                        <div class="dashboard-card-value">
+                            <i class="ph ph-calendar-blank"></i>
+                            <span><%= todayCount %> registros</span>
+                        </div>
+                        <p class="card-subtitle">
+                            <% if (todayCount == 0) { %> Nenhum registro hoje ainda <% } %>
+                        </p>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>Emoção do Mês</h3>
+                        <div class="dashboard-card-value">
+                            <span><%= emotionOfMonth || "Sem dados" %></span>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <h3>Total de Registros</h3>
+                        <div class="dashboard-card-value">
+                            <i class="ph ph-chart-bar"></i>
+                            <span><%= totalCount %></span>
+                        </div>
+                        <p class="card-subtitle">
+                            Continue registrando suas emoções diariamente
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- GRÁFICO 1 — HUMOR DA SEMANA -->
+                <div class="dashboard-section">
+                    <h3>Humor da Semana</h3>
+                    <p class="section-subtitle">Intensidade média das emoções nos últimos 7 dias</p>
+
+                    <div class="dashboard-chart-box">
+                        <% if (!hasWeeklyData) { %>
+                            <div class="empty-state">
+                                <i class="ph ph-smiley"></i>
+                                <p>Nenhum dado ainda</p>
+                                <span>Registre suas emoções para ver o gráfico</span>
+                            </div>
+                        <% } else { %>
+                            <canvas id="weeklyChart"></canvas>
+                        <% } %>
+                    </div>
+                </div>
+
+                <!-- GRÁFICO 2 — Intensidade Média por Emoção -->
+                <div class="dashboard-section">
+                    <h3>Intensidade Média por Emoção</h3>
+                    <p class="section-subtitle">Comparação das intensidades detectadas</p>
+
+                    <div class="dashboard-chart-box">
+                        <canvas id="emotionIntensityChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- GRÁFICO 3 — Emoções Mais Registradas -->
+                <div class="dashboard-section">
+                    <h3>Emoções Mais Registradas</h3>
+                    <p class="section-subtitle">Quantas vezes cada emoção aparece no total</p>
+
+                    <div class="dashboard-chart-box">
+                        <canvas id="emotionCountChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- GRÁFICO 4 — Origem / Motivos -->
+                <div class="dashboard-section">
+                    <h3>Motivos Mais Comuns</h3>
+                    <p class="section-subtitle">O que mais causa suas emoções</p>
+
+                    <div class="dashboard-chart-box">
+                        <canvas id="originChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- ÚLTIMAS EMOÇÕES -->
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h3>Últimas Emoções Registradas</h3>
+                        <p class="section-subtitle">Seus registros mais recentes</p>
+
+                        <a href="/emotions/history" class="btn-secondary">Ver Tudo</a>
+                    </div>
+
+                    <div class="dashboard-list-box">
+                        <% if (recent.length === 0) { %>
+                            <div class="empty-state small">
+                                <p>Nenhuma emoção registrada ainda</p>
+                                <a href="/emotions/select" class="link">Registrar primeira emoção</a>
+                            </div>
+                        <% } else { %>
+
+                            <% recent.forEach(item => { %>
+
+                                <div class="emotion-item">
+
+                                    <div class="emotion-header">
+                                        <strong><%= item.emotion %></strong>
+                                        <span class="emotion-type">
+                                            <%= item.type === "text" ? "📝 Texto" : "🖼️ Imagem" %>
+                                        </span>
+                                    </div>
+
+                                    <p class="emotion-notes"><%= item.notes %></p>
+
+                                    <div class="emotion-meta">
+                                        <span>🌡️ Intensidade: <%= item.intensity %>/10</span>
+                                        <span>🎯 Confiança: <%= (item.confidence * 100).toFixed(0) %>%</span>
+                                        <span>📌 Origem: <%= item.origin %></span>
+                                    </div>
+
+                                    <% if (item.image_path) { %>
+                                        <img src="<%= item.image_path %>" class="emotion-thumb">
+                                    <% } %>
+
+                                    <span class="emotion-date">
+                                        <%= new Date(item.created_at).toLocaleString("pt-BR") %>
+                                    </span>
+                                </div>
+
+                            <% }) %>
+
+                        <% } %>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+<!-- SCRIPT FINAL UNIFICADO -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* -----------------------------
+       GRÁFICO 1 — Intensidade por dia
+    ------------------------------ */
+
+    const ctx1 = document.getElementById("weeklyChart")?.getContext("2d");
+    if (ctx1) {
+        new Chart(ctx1, {
+            type: "bar",
+            data: {
+                labels: <%- JSON.stringify(weeklyStats.map(i => i.date)) %>,
+                datasets: [{
+                    label: "Intensidade Média",
+                    data: <%- JSON.stringify(weeklyStats.map(i => i.avgIntensity)) %>,
+                    backgroundColor: "rgba(133, 69, 255, 0.4)",
+                    borderColor: "#8545FF",
+                    borderWidth: 2,
+                }]
+            },
+            options: { responsive: true, indexAxis: "y" }
+        });
+    }
+
+    /* -----------------------------
+       GRÁFICO 2 — Intensidade por emoção
+    ------------------------------ */
+
+    const ctx2 = document.getElementById("emotionIntensityChart")?.getContext("2d");
+    if (ctx2) {
+        new Chart(ctx2, {
+            type: "bar",
+            data: {
+                labels: <%- JSON.stringify(intensityByEmotion.map(i => i.emotion)) %>,
+                datasets: [{
+                    label: "Intensidade Média",
+                    data: <%- JSON.stringify(intensityByEmotion.map(i => i.avgIntensity)) %>,
+                    backgroundColor: "rgba(255, 99, 132, 0.4)",
+                    borderColor: "rgb(255, 99, 132)",
+                    borderWidth: 2,
+                }]
+            },
+            options: { responsive: true, indexAxis: "y" }
+        });
+    }
+
+    /* -----------------------------
+       GRÁFICO 3 — Emoções mais registradas
+    ------------------------------ */
+
+    const ctx3 = document.getElementById("emotionCountChart")?.getContext("2d");
+    if (ctx3) {
+        new Chart(ctx3, {
+            type: "bar",
+            data: {
+                labels: <%- JSON.stringify(emotionCounts.map(i => i.emotion)) %>,
+                datasets: [{
+                    label: "Ocorrências",
+                    data: <%- JSON.stringify(emotionCounts.map(i => i.total)) %>,
+                    backgroundColor: "rgba(54, 162, 235, 0.4)",
+                    borderColor: "rgb(54, 162, 235)",
+                    borderWidth: 2,
+                }]
+            },
+            options: { responsive: true, indexAxis: "y" }
+        });
+    }
+
+    /* -----------------------------
+       GRÁFICO 4 — Origens mais comuns
+    ------------------------------ */
+
+    const ctx4 = document.getElementById("originChart")?.getContext("2d");
+    if (ctx4) {
+        new Chart(ctx4, {
+            type: "bar",
+            data: {
+                labels: <%- JSON.stringify(originCounts.map(i => i.origin)) %>,
+                datasets: [{
+                    label: "Ocorrências",
+                    data: <%- JSON.stringify(originCounts.map(i => i.total)) %>,
+                    backgroundColor: "rgba(75, 192, 192, 0.4)",
+                    borderColor: "rgb(75, 192, 192)",
+                    borderWidth: 2,
+                }]
+            },
+            options: { responsive: true, indexAxis: "y" }
+        });
+    }
+
+});
+</script>
+
+</body>
+
+</html>
