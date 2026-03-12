@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrar Emoção pela Imagem • Emodia</title>
+
+    <link rel="stylesheet" href="/css/register-image.css" />
+</head>
+
+<body>
+
+    <a href="/emotions/select" class="back-btn">← Voltar</a>
+
+    <div class="container">
+        <h1>Registrar Emoção pela Imagem 📷</h1>
+        <p class="subtitle">
+            Você pode tirar uma foto OU enviar um arquivo.
+        </p>
+
+        <!--  UPLOAD NORMAL  -->
+        <form action="/emotions/register/image" method="POST" enctype="multipart/form-data" class="upload-card">
+
+            <label class="file-input">
+                <span>📤 Selecione uma imagem</span>
+                <input type="file" name="image" id="imageInput" accept="image/*">
+            </label>
+
+            <div id="previewContainer" class="preview hidden">
+                <img id="previewImg">
+            </div>
+
+            <button class="analyze-btn">Analisar Emoção ✨</button>
+        </form>
+
+        <hr class="divider">
+
+        <!--  WEBCAM -->
+        <div class="webcam-area">
+            <h2>Tirar Foto pela Webcam 🎥</h2>
+
+            <video id="camera" autoplay playsinline></video>
+
+            <button id="captureBtn" class="camera-btn">📸 Capturar Foto</button>
+
+            <canvas id="snapshot" class="hidden"></canvas>
+
+            <form id="webcamForm" action="/emotions/register/image" method="POST">
+                <input type="hidden" name="webcamImage" id="webcamImageInput">
+                <button type="submit" id="sendWebcamBtn" class="analyze-btn hidden">
+                    Analisar Foto da Webcam ✨
+                </button>
+            </form>
+        </div>
+
+        <!-- BLOCO COM RESULTADO -->
+        <%- include("components/emotion-box", { emotionDetected, imagePreview }) %>
+
+    </div>
+
+    <script src="/js/image-preview.js"></script>
+    <script src="/js/webcam.js"></script>
+
+</body>
+
+</html>

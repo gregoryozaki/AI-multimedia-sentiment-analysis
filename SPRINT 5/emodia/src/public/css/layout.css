@@ -1,0 +1,18 @@
+/* ===== LAYOUT ===== */
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(135deg, #faf5ff 0%, #f5ebff 40%, #faeefb 100%);
+}
+
+.layout-container {
+    display: flex;
+    height: 100vh;
+}
+
+.content-area {
+    flex: 1;
+    padding: 30px 45px;
+    overflow-y: auto;
+}

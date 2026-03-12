@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emodia • Monitore suas emoções</title>
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/landing.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="landing-navbar">
+        <img src="/assets/logo.png" alt="Logo Emodia" class="landing-logo">
+
+        <nav class="landing-nav-buttons">
+            <a href="/login" class="nav-login">Entrar</a>
+            <a href="/signup" class="nav-signup">Criar Conta</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="landing-hero">
+
+        <span class="hero-badge">
+            💜 Seu acompanhamento emocional inteligente
+        </span>
+
+        <h1 class="hero-title">
+            Monitore suas emoções e<br>
+            cuide do seu bem-estar
+        </h1>
+
+        <p class="hero-subtitle">
+            Registre suas emoções diariamente, visualize padrões e receba alertas personalizados
+            para cuidar melhor da sua saúde mental.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="/signup" class="hero-btn-primary">Começar Gratuitamente</a>
+            <a href="/login" class="hero-btn-secondary">Já tenho conta</a>
+        </div>
+
+        <!-- MEDIDOR DE EMOÇÕES -->
+    <section class="emotion-gauge-section">
+
+        <div class="emotion-gauge-container">
+
+            <svg viewBox="0 0 400 220" class="emotion-gauge-svg">
+
+                <!-- Aqui serão desenhados os arcos -->
+                <g id="emotion-arcs"></g>
+
+                <!-- Círculo Central -->
+                <circle cx="200" cy="200" r="75" fill="#9CA3AF" />
+
+                <text x="200" y="175" text-anchor="middle"
+                    fill="white" font-size="22" font-weight="600"
+                    style="font-family: Inter, sans-serif;">
+                    MEDIDOR
+                </text>
+
+                <text x="200" y="205" text-anchor="middle"
+                    fill="white" font-size="20" font-weight="600"
+                    style="font-family: Inter, sans-serif;">
+                    DE EMOÇÕES
+                </text>
+
+                <!-- SETA -->
+                <g id="needle"
+                    class="needle-rotate"
+                    style="transform-origin: 200px 200px;">
+                    
+                    <!-- sombra -->
+                    <polygon points="200,200 195,90 205,90"
+                        fill="rgba(0,0,0,0.3)" transform="translate(2,2)" />
+
+                    <!-- corpo da seta -->
+                    <polygon points="200,200 195,90 205,90"
+                        fill="#DC2626" />
+
+                    <!-- ponta -->
+                    <circle cx="200" cy="85" r="8" fill="#DC2626"></circle>
+
+                    <!-- pivô -->
+                    <circle cx="200" cy="200" r="12" fill="#DC2626"></circle>
+                    <circle cx="200" cy="200" r="8" fill="white"></circle>
+
+                </g>
+
+            </svg>
+
+        </div>
+
+    </section>
+
+
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="how-it-works">
+
+        <h2 class="section-title">Como Funciona</h2>
+        <p class="section-subtitle">Apenas 3 passos simples para começar a cuidar melhor da sua saúde emocional</p>
+
+        <div class="how-cards">
+
+            <div class="how-card">                
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+  <circle cx="12" cy="12" r="10" fill="#F3E8FF"/>
+  <circle cx="9" cy="10" r="1.2" fill="#6B21A8"/>
+  <circle cx="15" cy="10" r="1.2" fill="#6B21A8"/>
+  <path d="M8 14c1 1.4 2.5 2 4 2s3-0.6 4-2" stroke="#6B21A8" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+                <h3>1. Registre</h3>
+                <p>Escolha como você está se sentindo entre as 6 emoções básicas</p>
+            </div>
+
+            <div class="how-card">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+  <circle cx="12" cy="12" r="10" fill="#DBEAFE"/>
+  <path d="M7 14l3-3 3 2 4-5" stroke="#2563EB" stroke-width="2" fill="none" stroke-linejoin="round"/>
+  <path d="M14 6h4v4" stroke="#2563EB" stroke-width="2" fill="none"/>
+</svg>
+
+                <h3>2. Acompanhe</h3>
+                <p>Visualize gráficos e padrões das suas emoções ao longo do tempo</p>
+            </div>
+
+            <div class="how-card">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none">
+  <circle cx="12" cy="12" r="10" fill="#FFE4E6"/>
+  <path d="M12 7v5" stroke="#E11D48" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="12" cy="16" r="1.2" fill="#E11D48"/>
+</svg>
+
+                <h3>3. Receba Alertas</h3>
+                <p>Sistema inteligente detecta padrões de risco e oferece apoio</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EMOÇÕES SUPORTADAS -->
+    <section class="supported-emotions">
+
+        <h2 class="section-title">Emoções Suportadas</h2>
+        <p class="section-subtitle">Registre e monitore as 6 emoções básicas de Ekman</p>
+
+        <div class="emotion-grid">
+
+            <div class="emotion-card">
+                <svg width="64" height="64" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="10" fill="#FEF3C7"/>
+  <circle cx="8.5" cy="10" r="1.3" fill="#D97706"/>
+  <circle cx="15.5" cy="10" r="1.3" fill="#D97706"/>
+  <path d="M7.5 14c1.2 1.5 2.8 2.2 4.5 2.2S15.3 15.5 16.5 14" 
+        stroke="#D97706" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+
+                <span>Alegria</span>
+            </div>
+
+            <div class="emotion-card">
+                <svg width="64" height="64" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="10" fill="#DBEAFE"/>
+  <circle cx="8.5" cy="10" r="1.3" fill="#1D4ED8"/>
+  <circle cx="15.5" cy="10" r="1.3" fill="#1D4ED8"/>
+  <path d="M8 15c1-.8 2.2-1.2 4-1.2s3 .4 4 1.2" stroke="#1D4ED8" stroke-width="1.5"/>
+  <ellipse cx="7" cy="14" rx="1" ry="2" fill="#1D4ED8" opacity="0.5"/>
+</svg>
+
+                <span>Tristeza</span>
+            </div>
+
+            <div class="emotion-card">
+                <svg width="64" height="64" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="10" fill="#FEE2E2"/>
+  <path d="M8 9l2 1" stroke="#B91C1C" stroke-width="2"/>
+  <path d="M16 9l-2 1" stroke="#B91C1C" stroke-width="2"/>
+  <path d="M8 16c1-.8 2.2-1.2 4-1.2s3 .4 4 1.2" 
+        stroke="#B91C1C" stroke-width="1.5"/>
+</svg>
+
+                <span>Raiva</span>
+            </div>
+
+            <div class="emotion-card">
+                <svg width="64" height="64" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="10" fill="#E0F2FE"/>
+  <circle cx="8.5" cy="10" r="1.4" fill="#0369A1"/>
+  <circle cx="15.5" cy="10" r="1.4" fill="#0369A1"/>
+  <ellipse cx="12" cy="16" rx="3" ry="1.2" fill="#0369A1"/>
+</svg>
+
+                <span>Medo</span>
+            </div>
+
+            <div class="emotion-card">
+                <svg width="64" height="64" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="10" fill="#DCFCE7"/>
+  <circle cx="9" cy="10" r="1.3" fill="#166534"/>
+  <circle cx="15" cy="10" r="1.3" fill="#166534"/>
+  <path d="M8 15h8" stroke="#166534" stroke-width="2"/>
+</svg>
+
+                <span>Nojo</span>
+            </div>
+
+            <div class="emotion-card">
+                <svg width="64" height="64" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="10" fill="#FEF9C3"/>
+  <circle cx="8.5" cy="10" r="1.3" fill="#CA8A04"/>
+  <circle cx="15.5" cy="10" r="1.3" fill="#CA8A04"/>
+  <circle cx="12" cy="15" r="2" fill="#CA8A04"/>
+</svg>
+
+                <span>Surpresa</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PRIVACIDADE -->
+    <section class="privacy">
+
+        <h2 class="section-title">Privacidade e Segurança</h2>
+        <p class="section-subtitle">Seus dados emocionais são pessoais e tratados com máximo cuidado</p>
+
+        <div class="privacy-grid">
+
+            <div class="privacy-card">
+                <svg width="48" height="48" viewBox="0 0 24 24">
+  <rect x="5" y="10" width="14" height="10" rx="2" fill="none" stroke="#7C3AED" stroke-width="2"/>
+  <path d="M8 10V7a4 4 0 018 0v3" stroke="#7C3AED" stroke-width="2"/>
+</svg>
+
+                <h3>Dados Locais</h3>
+                <p>Seus registros ficam armazenados localmente no seu dispositivo</p>
+            </div>
+
+            <div class="privacy-card">
+                <svg width="48" height="48" viewBox="0 0 24 24">
+  <path d="M12 3l8 4v5c0 5-4 9-8 9s-8-4-8-9V7l8-4z"
+        fill="none" stroke="#2563EB" stroke-width="2"/>
+</svg>
+
+                <h3>100% Privado</h3>
+                <p>Não compartilhamos seus dados emocionais com terceiros</p>
+            </div>
+
+            <div class="privacy-card">
+                <svg width="48" height="48" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="10" fill="none" stroke="#16A34A" stroke-width="2"/>
+  <path d="M8 12l2.5 3L16 9" stroke="#16A34A" stroke-width="2" fill="none"/>
+</svg>
+
+                <h3>Anonimato</h3>
+                <p>Suas informações são tratadas com total confidencialidade</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TESTEMUNHOS -->
+    <section class="testimonials">
+
+        <h2 class="section-title">O que nossos usuários dizem</h2>
+        <p class="section-subtitle">Pessoas reais cuidando da saúde mental com o Emodia</p>
+
+        <div class="testimonials-grid">
+
+            <div class="testimonial-card">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <linearGradient id="gradUser" x1="0" y1="0" x2="48" y2="48">
+      <stop offset="0%" stop-color="#ff8efb"/>
+      <stop offset="100%" stop-color="#b85cff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- CÍRCULO -->
+  <circle cx="24" cy="24" r="22" fill="url(#gradUser)"/>
+
+  <!-- BUSTO -->
+  <path d="M24 25c3.2 0 5.5-2.6 5.5-6s-2.3-6-5.5-6-5.5 2.6-5.5 6 2.3 6 5.5 6z"
+        stroke="white" stroke-width="2" fill="none"/>
+
+  <!-- OMBROS -->
+  <path d="M14 34c0-4 4.5-7 10-7s10 3 10 7"
+        stroke="white" stroke-width="2" fill="none"
+        stroke-linecap="round"/>
+</svg>
+
+                <div class="stars">★★★★★</div>
+                <p>"O Emodia me ajudou a identificar padrões de ansiedade que eu não percebia."</p>
+                <span class="testimonial-name">Maria Silva</span>
+            </div>
+
+            <div class="testimonial-card">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <linearGradient id="gradUser" x1="0" y1="0" x2="48" y2="48">
+      <stop offset="0%" stop-color="#ff8efb"/>
+      <stop offset="100%" stop-color="#b85cff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- CÍRCULO -->
+  <circle cx="24" cy="24" r="22" fill="url(#gradUser)"/>
+
+  <!-- BUSTO -->
+  <path d="M24 25c3.2 0 5.5-2.6 5.5-6s-2.3-6-5.5-6-5.5 2.6-5.5 6 2.3 6 5.5 6z"
+        stroke="white" stroke-width="2" fill="none"/>
+
+  <!-- OMBROS -->
+  <path d="M14 34c0-4 4.5-7 10-7s10 3 10 7"
+        stroke="white" stroke-width="2" fill="none"
+        stroke-linecap="round"/>
+</svg>
+
+                <div class="stars">★★★★★</div>
+                <p>"Interface simples e intuitiva. Consigo registrar minhas emoções em segundos."</p>
+                <span class="testimonial-name">João Santos</span>
+            </div>
+
+            <div class="testimonial-card">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <linearGradient id="gradUser" x1="0" y1="0" x2="48" y2="48">
+      <stop offset="0%" stop-color="#ff8efb"/>
+      <stop offset="100%" stop-color="#b85cff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- CÍRCULO -->
+  <circle cx="24" cy="24" r="22" fill="url(#gradUser)"/>
+
+  <!-- BUSTO -->
+  <path d="M24 25c3.2 0 5.5-2.6 5.5-6s-2.3-6-5.5-6-5.5 2.6-5.5 6 2.3 6 5.5 6z"
+        stroke="white" stroke-width="2" fill="none"/>
+
+  <!-- OMBROS -->
+  <path d="M14 34c0-4 4.5-7 10-7s10 3 10 7"
+        stroke="white" stroke-width="2" fill="none"
+        stroke-linecap="round"/>
+</svg>
+
+                <div class="stars">★★★★★</div>
+                <p>"Os alertas automáticos me fazem lembrar de cuidar de mim mesma."</p>
+                <span class="testimonial-name">Ana Costa</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+
+        <h2>Comece a cuidar das suas emoções hoje</h2>
+        <p>Junte-se a milhares de pessoas que estão melhorando sua saúde mental</p>
+
+        <a href="/signup" class="cta-btn">Criar Conta Gratuita</a>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="landing-footer">
+
+        <span class="footer-brand">💜 Emodia</span>
+        <p>Cuidando da sua saúde emocional, um registro por vez</p>
+        <p class="footer-copy">© 2024 Emodia. Todos os direitos reservados.</p>
+        <p>Em caso de crise, ligue CVV 188 (24h)</p>
+
+    </footer>
+    <script src="/js/emotion-gauge.js"></script>
+</body>
+</html>

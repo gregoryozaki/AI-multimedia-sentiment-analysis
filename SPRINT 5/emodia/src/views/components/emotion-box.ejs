@@ -1,0 +1,10 @@
+<% if (emotionDetected) { %>
+    <div class="result-card">
+        <h2>Emoção Identificada:</h2>
+        <p class="result"><%= emotionDetected %></p>
+
+        <% if (imagePreview) { %>
+            <img src="<%= imagePreview %>" class="result-img">
+        <% } %>
+    </div>
+<% } %>
